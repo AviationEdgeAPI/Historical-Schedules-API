@@ -1,7 +1,5 @@
 # Historical-Schedules-API
-Aviation Edge Historical Schedules API provides the latest recorded data of airport schedules worlwide, on a given date or date range. It has global coverage with the exception of military and private airfields. We save and collect the real-time data we provide through our Schedules API and provide this in a separate API. The historical API has the same amount of details for each flight in the schedule with even more filters available. Delay and cancellation data stored, making the API perfect for compensation claims and historical flight analysis/comparisons.
-
-[Get your API key](https://aviation-edge.com/premium-api/) in a minute and start testing the data right away. The API is provided through API subscriptions. All plans grant access to the Historical Schedules API and other APIs with a difference of the monthly API call limit. Choose the best plan for you and upgrade, downgrade or cancel your plan anytime without  commitments.
+Aviation Edge [Historical Schedules API](https://aviation-edge.com/historical-flight-schedules-api/) provides the latest recorded data of airport schedules worlwide, on a given date or date range. It has global coverage with the exception of military and private airfields. We save and collect the real-time data we provide through our Schedules API and provide this in a separate API. The historical API has the same amount of details for each flight in the schedule with even more filters available. Delay and cancellation data stored, making the API perfect for compensation claims and historical flight analysis/comparisons.
 
 ### Documentation
 You may find input parameters, output examples with explanations for each item, filter list, and more in the [documentation](https://aviation-edge.com/developers/).
@@ -91,8 +89,10 @@ For filtering the flights of a certain airline from the arrival schedule of a ce
 ]
 ```
 
-### Questions & Support
+### Access & Support
 [Contact us](https://aviation-edge.com/contact/) via email for any questions or support requests.
+
+[Get your API key](https://aviation-edge.com/premium-api/) in a minute and start testing the data right away. The API is provided through API subscriptions. All plans grant access to the Historical Schedules API and other APIs with a difference of the monthly API call limit. Choose the best plan for you and upgrade, downgrade or cancel your plan anytime without  commitments.
 
 ### License
 The use of the API is subject to Aviation Edge [Terms and Conditions](https://aviation-edge.com/api-terms-of-service/).
