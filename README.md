@@ -14,27 +14,27 @@ You may find input parameters, output examples with explanations for each item, 
 ### Request 
 For the departure schedule of a certain airport on a certain date:
 
-**GET** http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=departure&date_from=YYYY-MM-DD
+**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=departure&date_from=YYYY-MM-DD`
 
 For the arrival schedule of a certain airport on a certain date:
 
-**GET** http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD
+**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD`
 
 For the schedule of a certain airport of a certain date range (also available for arrival):
 
-**GET** http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=departure&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD
+**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=departure&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD`
 
 For the schedule of a certain airport on a certain date (or range) but only flights with a certain status:
 
-**GET** http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD&status=cancelled
+**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD&status=cancelled`
 
 For tracking individual historical flights:
 
-**GET** http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=departure&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD&flight_number=[1234]
+**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=departure&date_from=YYYY-MM-DD&date_to=YYYY-MM-DD&flight_number=[1234]`
 
 For filtering the flights of a certain airline from the arrival schedule of a certain airport on a certain date (also available for departure schedules and as a date range):
 
-**GET** http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD&&airline_iata=TK
+**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD&&airline_iata=TK`
 
 ### Filters
 ```
