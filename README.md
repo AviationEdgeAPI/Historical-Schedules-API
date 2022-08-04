@@ -34,7 +34,7 @@ For tracking individual historical flights:
 
 For filtering the flights of a certain airline from the arrival schedule of a certain airport on a certain date (also available for departure schedules and as a date range):
 
-**GET** `http://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD&&airline_iata=TK`
+**GET** `https://aviation-edge.com/v2/public/flightsHistory?key=[API_KEY]&code=JFK&type=arrival&date_from=YYYY-MM-DD&&airline_iata=TK`
 
 ### Filters
 ```
