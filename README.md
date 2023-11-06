@@ -1,5 +1,5 @@
-# Historical-Schedules-API
-Aviation Edge [Historical Schedules API](https://aviation-edge.com/historical-flight-schedules-api/) provides the latest recorded data of airport schedules worlwide, on a given date or date range. It has global coverage with the exception of military and private airfields. We save and collect the real-time data we provide through our Schedules API and provide this in a separate API. The historical API has the same amount of details for each flight in the schedule with even more filters available. Delay and cancellation data stored, making the API perfect for compensation claims and historical flight analysis/comparisons.
+# Historical-Airport-Schedules-API
+Aviation Edge [Historical Airport Schedules API](https://aviation-edge.com/historical-flight-schedules-api/) provides the latest recorded data of airport schedules worldwide, on a given date or date range. It has global coverage with the exception of military and private airfields. We save and collect the real-time data we provide through our Schedules API and provide this in a separate API. The historical API has the same amount of details for each flight in the schedule with even more filters available. Delay and cancellation data stored, making the API perfect for compensation claims and historical flight analysis/comparisons.
 
 ### Documentation
 You may find input parameters, output examples with explanations for each item, filter list, and more in the [documentation](https://aviation-edge.com/developers/).
@@ -48,6 +48,65 @@ For filtering the flights of a certain airline from the arrival schedule of a ce
 &airline_iata=  option to filter airline based on airline IATA code
 &flight_num=    option to filter a specific flight based on its flight number
 ```
+
+### Useful Code Examples
+
+1.	Fetching the Data (axios library used)
+
+```
+const axios = require('axios');
+
+async function fetchAirportData(apiKey, airportCode, date) {
+    const endpoint = `https://aviation-edge.com/v2/public/flightsHistory?key=${apiKey}&code=${airportCode}&type=departure&date_from=${date}`;
+    
+    try {
+        const response = await axios.get(endpoint);
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching airport data:", error);
+        return null;
+    }
+}
+
+const apiKey = 'api-key';  // Replace with your actual API key
+const airportCode = 'JFK';
+const date = '2023-03-04';
+
+fetchAirportData(apiKey, airportCode, date).then(data => {
+    console.log(data);
+});
+```
+
+2.	Filtering flights based on status (the example is delayed flights)
+
+```
+function filterDelayedFlights(flights) {
+    return flights.filter(flight => flight.departure.delay && flight.departure.delay > 0);
+}
+
+fetchAirportData(apiKey, airportCode, date).then(data => {
+    const delayedFlights = filterDelayedFlights(data);
+    console.log("Delayed Flights:", delayedFlights);
+});
+```
+
+3.	Displaying airline name + delay for a quick overview
+
+```
+function displayDelayedInfo(flights) {
+    flights.forEach(flight => {
+        const airlineName = flight.airline.name;
+        const delay = flight.departure.delay;
+        console.log(`${airlineName} had a delay of ${delay} minutes.`);
+    });
+}
+
+fetchAirportData(apiKey, airportCode, date).then(data => {
+    const delayedFlights = filterDelayedFlights(data);
+    displayDelayedInfo(delayedFlights);
+});
+```
+
 
 ### Response
 ```
